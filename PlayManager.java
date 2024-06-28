@@ -14,12 +14,18 @@ public class PlayManager {
     public static int top_y;
     public static int bottom_y;
 
+    // Mino
+    final int MINO_START_X;
+    final int MINO_START_Y;
+    
     public PlayManager() {
         // Main Play Area Frame
         left_x = (Panel.WIDTH / 2) - (WIDTH / 2);
         right_x = left_x + WIDTH;
         top_y = 50;
         bottom_y = top_y + HEIGHT;
+        MINO_START_X = left_x + (WIDTH/2) - Block.SIZE;
+        MINO_START_Y = top_y + Block.SIZE;
     }
 
     public void update() {
@@ -32,11 +38,11 @@ public class PlayManager {
         g2.setStroke(new BasicStroke(3f));
         g2.drawRect(left_x - 3, top_y - 3, WIDTH + 6, HEIGHT + 6);
         // Draw next Mino Frame
-        g2.drawRect(860, 150, 200, 200);
+        g2.drawRect(860, 120, 200, 200);
         g2.setFont(new Font("Arial", Font.PLAIN, 25));
         g2.setColor(Color.black);
         g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-        g2.drawString("NEXT", 930, 190);
+        g2.drawString("NEXT", 930, 150);
 
     }
 }
